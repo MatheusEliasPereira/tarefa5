@@ -1,0 +1,5 @@
+gcc -c -fpic *.c -I.
+gcc -shared -o ../MAIN/liblinalg.so *.o
+rm *.o
+gcc -L. -Wl,-rpath=. -o ../MAIN/main ../MAIN/main.c -llinalg -I. -lm
+cp linalg.h ../MAIN
